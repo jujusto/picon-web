@@ -5,49 +5,36 @@ interface PiconLogoProps {
   theme?: "dark" | "light";
 }
 
+const logoSizes = {
+  sm: "w-[104px] sm:w-[116px]",
+  md: "w-[128px] sm:w-[142px]",
+  lg: "w-[190px] sm:w-[220px]",
+};
+
+const taglineSizes = {
+  sm: "text-[8px]",
+  md: "text-[9px] sm:text-[10px]",
+  lg: "text-xs sm:text-sm",
+};
+
 export function PiconLogo({
   className = "",
   size = "md",
   withTagline = true,
   theme = "dark",
 }: PiconLogoProps) {
-  const textSizes = {
-    sm: "text-lg tracking-wider",
-    md: "text-2xl tracking-wider",
-    lg: "text-4xl tracking-widest",
-  };
-
-  const apertureSizes = {
-    sm: "h-4 w-4",
-    md: "h-5 w-5 sm:h-6 sm:w-6",
-    lg: "h-8 w-8 sm:h-10 sm:w-10",
-  };
-
-  const taglineSizes = {
-    sm: "text-[9px] -mt-0.5",
-    md: "text-[11px] -mt-1",
-    lg: "text-sm mt-0.5",
-  };
-
-  const textColor = theme === "dark" ? "text-white" : "text-black";
-  const tagColor = theme === "dark" ? "text-zinc-300" : "text-zinc-600";
+  const taglineColor = theme === "dark" ? "text-zinc-300" : "text-zinc-700";
 
   return (
     <div className={`flex flex-col items-start ${className}`}>
-      {/* Brand wordmark PIC[aperture]N */}
-      <div className={`flex items-center font-display font-extrabold ${textColor} ${textSizes[size]} leading-none`}>
-        <span>PIC</span>
-        <img
-          src="/manus-storage/aperture_transparent_fecc6233.png"
-          alt="O"
-          className={`${apertureSizes[size]} mx-0.5 inline-block object-contain`}
-        />
-        <span>N</span>
-      </div>
-
+      <img
+        src="/manus-storage/picon_wordmark_source_aeb6fd16.png"
+        alt="PICON"
+        className={`${logoSizes[size]} h-auto object-contain object-left`}
+      />
       {withTagline && (
-        <span className={`font-sans font-medium lowercase tracking-wide ${tagColor} ${taglineSizes[size]}`}>
-          ce qui compte vraiment
+        <span className={`mt-1 pl-1 font-sans font-semibold tracking-[0.18em] uppercase ${taglineColor} ${taglineSizes[size]}`}>
+          Ce qui compte vraiment
         </span>
       )}
     </div>
