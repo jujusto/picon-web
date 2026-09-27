@@ -193,4 +193,68 @@
     background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
     background-size: 24px 24px;
   }
+
+  .picon-ambient-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #090a0c;
+    isolation: isolate;
+  }
+
+  .picon-ambient-blob {
+    position: absolute;
+    width: 48vw;
+    height: 48vw;
+    min-width: 360px;
+    min-height: 360px;
+    border-radius: 999px;
+    filter: blur(72px);
+    opacity: 0.22;
+    will-change: transform;
+    animation: picon-ambient-drift 18s ease-in-out infinite alternate;
+  }
+
+  .picon-ambient-blob-one {
+    top: -22%;
+    left: -14%;
+    background: radial-gradient(circle, oklch(0.78 0.17 50 / 0.62), transparent 68%);
+  }
+
+  .picon-ambient-blob-two {
+    top: 18%;
+    right: -18%;
+    animation-delay: -6s;
+    background: radial-gradient(circle, oklch(0.62 0.14 220 / 0.5), transparent 68%);
+  }
+
+  .picon-ambient-blob-three {
+    bottom: -25%;
+    left: 28%;
+    animation-delay: -12s;
+    background: radial-gradient(circle, oklch(0.55 0.16 320 / 0.38), transparent 68%);
+  }
+
+  .picon-ambient-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+  }
+
+  @keyframes picon-ambient-drift {
+    0% { transform: translate3d(-2%, -1%, 0) scale(0.98); }
+    50% { transform: translate3d(5%, 3%, 0) scale(1.06); }
+    100% { transform: translate3d(-1%, 6%, 0) scale(1.01); }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .picon-ambient-blob { animation: none; }
+  }
 }

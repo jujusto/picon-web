@@ -30,6 +30,7 @@ export function Navbar({ onOpenApp }: NavbarProps) {
 
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-zinc-300">
             <a href="#app-features" className="hover:text-white transition-colors">L'application</a>
+            <a href="#pricing" className="hover:text-white transition-colors">Tarifs</a>
             <a href="#why-picon" className="hover:text-white transition-colors">Pourquoi PICON</a>
             <a href="#process" className="hover:text-white transition-colors">Comment ça marche</a>
             <a href="#delivery" className="hover:text-white transition-colors">Livraison</a>
@@ -54,6 +55,7 @@ export function Navbar({ onOpenApp }: NavbarProps) {
         <div className="lg:hidden bg-[#111214] border-b border-white/10 px-4 pt-4 pb-6 mt-3 space-y-3">
           <nav className="flex flex-col space-y-2 text-base font-medium text-zinc-300">
             <a href="#app-features" onClick={closeMenu} className="px-3 py-2 rounded-md hover:bg-white/5 hover:text-white">L'application</a>
+            <a href="#pricing" onClick={closeMenu} className="px-3 py-2 rounded-md hover:bg-white/5 hover:text-white">Tarifs</a>
             <a href="#why-picon" onClick={closeMenu} className="px-3 py-2 rounded-md hover:bg-white/5 hover:text-white">Pourquoi PICON</a>
             <a href="#process" onClick={closeMenu} className="px-3 py-2 rounded-md hover:bg-white/5 hover:text-white">Comment ça marche</a>
             <a href="#delivery" onClick={closeMenu} className="px-3 py-2 rounded-md hover:bg-white/5 hover:text-white">Livraison</a>

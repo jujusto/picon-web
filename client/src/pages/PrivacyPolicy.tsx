@@ -1,0 +1,11 @@
+import { LegalLayout } from "@/components/LegalLayout";
+
+export default function PrivacyPolicy() {
+  return <LegalLayout kicker="Vie privée & confiance" title="Politique de confidentialité" intro="PICON protège vos photos et utilise vos données uniquement pour faire fonctionner l'expérience de laboratoire, d'impression et de livraison." sections={[
+    { title: "Données collectées", body: "Pour exécuter le service, PICON peut traiter les photos que vous chargez dans l'application, votre nom, votre numéro de téléphone, votre adresse de livraison au Togo et votre adresse e-mail. Nous cherchons à limiter les informations aux données nécessaires à votre demande." },
+    { title: "Finalités d'utilisation", body: "Ces informations servent à produire les tirages, préparer la livraison, vous envoyer les notifications liées à votre commande et répondre à vos demandes d'assistance. Elles ne sont pas utilisées pour vendre vos images ni pour une publicité sans rapport avec le service." },
+    { title: "Confidentialité des photos", body: "Vos photographies restent vos contenus. Les fichiers sont conservés temporairement pendant la préparation et le traitement de l'impression, puis supprimés dans un délai maximum de 30 jours après expédition ou livraison, sauf nécessité de support ou demande explicite contraire." },
+    { title: "Sécurité et paiement", body: "PICON met en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données. Les paiements par Mixx by Yas/T-Money, Flooz/Moov Money ou carte bancaire sont traités par des passerelles partenaires sécurisées ; PICON ne reçoit pas vos codes confidentiels ni le numéro complet de votre carte." },
+    { title: "Vos droits et vos demandes", body: "Vous pouvez demander l'accès, la rectification, la limitation ou la suppression des données liées à votre compte. Écrivez à infos@photopicon.com en précisant l'adresse e-mail ou le numéro associé à votre demande ; l'équipe vous répondra après vérification." },
+  ]} highlightTitle="Vos photos restent votre secret." highlightBody="Si vous souhaitez demander la suppression de votre compte ou de données associées, contactez-nous à infos@photopicon.com. La demande sera examinée et traitée selon les données réellement conservées." />;
+}

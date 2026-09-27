@@ -6,6 +6,8 @@ import { LivingRoomShowcase } from "@/components/LivingRoomShowcase";
 import { FaqAndContact } from "@/components/FaqAndContact";
 import { Footer } from "@/components/Footer";
 import { PlayStoreButton } from "@/components/PlayStoreButton";
+import { PricingSection } from "@/components/PricingSection";
+import { AmbientBackground } from "@/components/AmbientBackground";
 import { ArrowDown, CheckCircle2, Images, ShieldCheck, Smartphone, Truck, Play } from "lucide-react";
 
 export default function Home() {
@@ -17,10 +19,11 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090a0c] text-white flex flex-col selection:bg-amber-400 selection:text-black">
+    <div className="relative min-h-screen bg-[#090a0c] text-white flex flex-col selection:bg-amber-400 selection:text-black">
+      <AmbientBackground />
       <Navbar onOpenApp={jumpToApp} />
 
-      <main>
+      <main className="relative z-10">
         <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-32 overflow-hidden">
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-amber-500/15 via-blue-500/10 to-transparent rounded-full blur-[120px] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -66,13 +69,14 @@ export default function Home() {
         </section>
 
         <AppFeatures />
+        <PricingSection />
         <div id="why-picon"><LabPillars /></div>
         <ProcessSteps />
         <LivingRoomShowcase />
         <FaqAndContact />
       </main>
 
-      <Footer />
+      <div className="relative z-10"><Footer /></div>
       <button onClick={jumpToApp} aria-label="Retour à l'application" className="fixed bottom-5 right-5 z-40 hidden sm:flex items-center gap-2 rounded-full bg-white text-black px-4 py-3 text-xs font-bold shadow-2xl hover:bg-zinc-200 transition-all active:scale-95"><Smartphone className="w-4 h-4 text-amber-600" />Voir l'app <ArrowDown className="w-3.5 h-3.5" /></button>
     </div>
   );
