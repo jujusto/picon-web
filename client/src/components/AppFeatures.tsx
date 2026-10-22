@@ -1,12 +1,32 @@
+import { useEffect, useState } from "react";
 import { Check, Crop, Images, PackageCheck, Smartphone, Sparkles } from "lucide-react";
 import { PlayStoreButton } from "./PlayStoreButton";
+import { fetchPiconFeatures, type PiconFeature } from "@/lib/cms";
+
+const fallbackFeatures: PiconFeature[] = [
+  { id: 1, title: "Chargez", description: "Retrouvez vos souvenirs directement dans votre smartphone, sans transfert compliqué ni passage en agence.", icon: "images", order: 1 },
+  { id: 2, title: "Commandez", description: "Choisissez le format, ajustez le cadrage et vérifiez le rendu de chaque photo avant de confirmer.", icon: "crop", order: 2 },
+  { id: 3, title: "Livraison", description: "PICON prépare vos impressions et organise la livraison à domicile selon les options disponibles.", icon: "package-check", order: 3 },
+];
+
+const iconByKey = {
+  images: Images,
+  crop: Crop,
+  "package-check": PackageCheck,
+  smartphone: Smartphone,
+  sparkles: Sparkles,
+} as const;
 
 export function AppFeatures() {
-  const features = [
-    { icon: Images, number: "01", title: "Chargez", text: "Retrouvez vos souvenirs directement dans votre smartphone, sans transfert compliqué ni passage en agence." },
-    { icon: Crop, number: "02", title: "Commandez", text: "Choisissez le format, ajustez le cadrage et vérifiez le rendu de chaque photo avant de confirmer." },
-    { icon: PackageCheck, number: "03", title: "Livraison", text: "PICON prépare vos impressions et organise la livraison à domicile selon les options disponibles." },
-  ];
+  const [features, setFeatures] = useState<PiconFeature[]>(fallbackFeatures);
+
+  useEffect(() => {
+    let active = true;
+    fetchPiconFeatures()
+      .then((items) => { if (active && items.length) setFeatures(items); })
+      .catch(() => undefined);
+    return () => { active = false; };
+  }, []);
 
   return (
     <section id="app-features" className="py-24 bg-[#0d0e11] border-t border-white/10 text-white relative overflow-hidden">
@@ -22,7 +42,21 @@ export function AppFeatures() {
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {features.map((feature) => { const Icon = feature.icon; return <div key={feature.number} className="bg-[#141519] border border-white/10 rounded-2xl p-5 min-h-[240px] hover:border-amber-400/40 transition-colors group"><div className="flex items-center justify-between mb-8"><span className="font-mono text-3xl font-bold text-amber-400/30 group-hover:text-amber-400 transition-colors">{feature.number}</span><div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-black transition-colors"><Icon className="w-5 h-5" /></div></div><h3 className="font-bold text-base text-white mb-3">{feature.title}</h3><p className="text-xs text-zinc-400 leading-relaxed">{feature.text}</p></div>; })}
+            {features.map((feature, index) => {
+              const Icon = iconByKey[feature.icon as keyof typeof iconByKey] || Sparkles;
+              return (
+                <div key={feature.id} className="bg-[#141519] border border-white/10 rounded-2xl p-5 min-h-[240px] hover:border-amber-400/40 transition-colors group">
+                  <div className="flex items-center justify-between mb-8">
+                    <span className="font-mono text-3xl font-bold text-amber-400/30 group-hover:text-amber-400 transition-colors">{String(index + 1).padStart(2, "0")}</span>
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-black transition-colors">
+                      {feature.imageUrl ? <img src={feature.imageUrl} alt={feature.imageAlt || ""} className="w-full h-full object-cover rounded-xl" /> : <Icon className="w-5 h-5" />}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-base text-white mb-3">{feature.title}</h3>
+                  <p className="text-xs text-zinc-400 leading-relaxed">{feature.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
