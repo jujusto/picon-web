@@ -5,7 +5,6 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
-import { PlayStoreButton } from "./PlayStoreButton";
 
 export function ProcessSteps() {
   const steps = [
@@ -97,45 +96,9 @@ export function ProcessSteps() {
         {/* Bloc livraison — fond bleu profond (pause visuelle dans la section blanche) */}
         <div
           id="delivery"
-          className="bg-[#0A3D91] rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-center shadow-2xl"
+          className="bg-[#0A3D91] rounded-3xl overflow-hidden grid grid-cols-1 shadow-2xl"
         >
-          <div className="lg:col-span-6 p-8 sm:p-12 space-y-6">
-            <span className="text-xs font-mono text-[#F4B942] uppercase tracking-widest">
-              L'expérience PICON au Togo
-            </span>
-            <h3 className="text-2xl sm:text-4xl font-bold font-display text-white leading-tight">
-              Le digital pour commander. Le local pour vous livrer.
-            </h3>
-            <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-              PICON combine une application simple avec le savoir-faire d'un
-              laboratoire ancré à Lomé. L'objectif : vous faire gagner du temps
-              sans éloigner vos souvenirs de la vraie vie.
-            </p>
-            <div className="space-y-3 text-xs sm:text-sm text-white/90">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#F4B942]" />
-                <span>
-                  Une expérience mobile pensée pour les utilisateurs au Togo
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#F4B942]" />
-                <span>
-                  Des options et promotions visibles directement dans l'app
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#F4B942]" />
-                <span>Un accompagnement local jusqu'à la réception</span>
-              </div>
-            </div>
-            <PlayStoreButton
-              label="Installer l'application PICON"
-              variant="solid"
-            />
-          </div>
-
-          <div className="lg:col-span-6 h-full min-h-[380px] relative bg-[#062B66]">
+          <div className="h-full min-h-[280px] sm:min-h-[380px] relative bg-[#062B66]">
             <img
               src="/manus-storage/livraison-colis_24050a80.webp"
               alt="Livraison des tirages PICON au Togo"

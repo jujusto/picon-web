@@ -4,7 +4,6 @@ import {
   Mail,
   Instagram,
   Facebook,
-  Youtube,
   Send,
 } from "lucide-react";
 import { useState } from "react";
@@ -64,13 +63,6 @@ export function Footer() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white"
               >
                 <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                aria-label="YouTube"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white"
-              >
-                <Youtube className="w-4 h-4" />
               </a>
             </div>
           </div>
