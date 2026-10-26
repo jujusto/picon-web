@@ -17,7 +17,6 @@ import {
   ShieldCheck,
   Smartphone,
   Truck,
-  Play,
 } from "lucide-react";
 
 export default function Home() {
@@ -116,28 +115,30 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#E5E5E5] bg-gradient-to-br from-[#0A1F44] via-[#1AB5A3]/40 to-[#7C4DBC]/50 min-h-[480px] sm:min-h-[560px]">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
-                  <div className="relative z-10 min-h-[480px] sm:min-h-[560px] flex flex-col items-center justify-center text-center p-8">
-                    <div className="w-20 h-20 rounded-full bg-white/15 border border-white/40 backdrop-blur-md flex items-center justify-center mb-6 shadow-2xl">
-                      <Play className="w-8 h-8 text-white fill-white ml-1" />
-                    </div>
-                    <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#F5D33E] mb-3">
-                      Démonstration de l'application
-                    </span>
-                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-white max-w-sm leading-tight">
-                      Découvrez PICON en quelques secondes.
-                    </h2>
-                    <p className="text-sm text-white/85 max-w-sm mt-4 leading-relaxed">
-                      La vidéo de démonstration sera ajoutée ici pour montrer le
-                      parcours de sélection, de prévisualisation et de livraison.
-                    </p>
-                    <div className="mt-7 rounded-full border border-white/30 bg-black/40 px-4 py-2 text-[11px] text-white/90">
-                      Vidéo démonstrative à venir
-                    </div>
-                  </div>
-                </div>
+              <div className="lg:col-span-5 flex flex-col items-center justify-center gap-4">
+                <span className="rounded-full border border-[#1AB5A3]/25 bg-white/80 px-4 py-2 text-xs font-mono uppercase tracking-[0.16em] text-[#0A3D91] shadow-sm">
+                  Démonstration de l'application · 26 s
+                </span>
+                <figure className="w-full max-w-[320px] overflow-hidden rounded-3xl border border-white/60 bg-[#0A1F44] p-2 shadow-2xl">
+                  <video
+                    aria-label="Démonstration vidéo de l’application PICON"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster="/manus-storage/picon-app-demo-poster_db3abc42.jpg"
+                    className="aspect-[9/16] w-full rounded-2xl bg-[#0A1F44] object-contain"
+                  >
+                    <source
+                      src="/manus-storage/picon-app-demo_7ff673fa.mp4"
+                      type="video/mp4"
+                    />
+                    Votre navigateur ne prend pas en charge la lecture vidéo.
+                  </video>
+                  <figcaption className="sr-only">
+                    Découvrez le parcours de sélection, de prévisualisation et
+                    de livraison dans l'application PICON.
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>
