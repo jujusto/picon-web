@@ -76,8 +76,8 @@ export function LabPillars() {
           <div className="lg:col-span-7 relative group overflow-hidden rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-2">
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src="/manus-storage/mains-photo-papier_aaf94910.webp"
-                alt="Artisan tireur de l'atelier PICON vérifiant un tirage"
+                src="/manus-storage/picon-inspection-tirage_f61acdcc.webp"
+                alt="Tireur PICON vérifiant un tirage photo sous loupe de précision"
                 className="w-full h-[400px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8">
@@ -98,8 +98,8 @@ export function LabPillars() {
           <div className="lg:col-span-5 relative group overflow-hidden rounded-3xl shadow-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-2">
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src="/manus-storage/format-encadre_0dc5160a.webp"
-                alt="Matières, papiers fins, cadres bois et épreuves PICON"
+                src="/manus-storage/picon-galerie-memoire_28c00c18.webp"
+                alt="Galerie de portraits et de souvenirs imprimés en tirages d’art PICON"
                 className="w-full h-[400px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8">

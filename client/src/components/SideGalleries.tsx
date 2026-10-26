@@ -12,7 +12,7 @@ const leftPhotos = [
   "/manus-storage/marche-local_7f1a4c88.webp",
   "/manus-storage/couple-tradition_f624c82a.webp",
   "/manus-storage/famille-rire_a5f4a550.webp",
-  "/manus-storage/format-encadre_0dc5160a.webp",
+  "/manus-storage/picon-galerie-memoire_28c00c18.webp",
 ];
 
 const rightPhotos = [
@@ -20,7 +20,7 @@ const rightPhotos = [
   "/manus-storage/enfants-plage_a6a19c88.webp",
   "/manus-storage/famille-repas_6f3f2a39.webp",
   "/manus-storage/plage-bateau_046b266e.webp",
-  "/manus-storage/galerie-souvenirs_f4150b4c.webp",
+  "/manus-storage/picon-mur-cadres-maison_c0fc7c1d.webp",
 ];
 
 function PhotoFrame({

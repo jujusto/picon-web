@@ -34,8 +34,8 @@ export function LivingRoomShowcase() {
         <div className="relative group rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-2">
           <div className="relative overflow-hidden rounded-2xl">
             <img
-              src="/manus-storage/galerie-souvenirs_f4150b4c.webp"
-              alt="Mur de cadres photo dans un salon moderne et chaleureux à Lomé"
+              src="/manus-storage/picon-mur-cadres-maison_c0fc7c1d.webp"
+              alt="Mur de cadres photo dans un salon lumineux, avec des portraits et des souvenirs"
               className="w-full h-[480px] sm:h-[620px] object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
