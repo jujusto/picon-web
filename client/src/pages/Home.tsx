@@ -88,7 +88,7 @@ export default function Home() {
                       Pensé pour le Togo
                     </div>
                     <div className="text-[11px] text-[#666666] mt-0.5">
-                      De Lomé à votre domicile
+                      Livraison express
                     </div>
                   </div>
                 </div>

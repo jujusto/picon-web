@@ -7,7 +7,7 @@ import {
   Send,
 } from "lucide-react";
 import { useState } from "react";
-import { PlayStoreButton } from "./PlayStoreButton";
+import { PiconLogo } from "./PiconLogo";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -29,20 +29,9 @@ export function Footer() {
           {/* Colonne 1 — Brand */}
           <div className="lg:col-span-4 space-y-5">
             <div className="flex flex-col items-start gap-3">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center overflow-hidden">
-                <img
-                  src="/manus-storage/pro_footer_bf2d61c8.png"
-                  alt="PICON"
-                  className="w-full h-full object-contain p-1"
-                />
-              </div>
-              <div>
-                <div className="font-display font-bold text-lg tracking-wider text-white">
-                  PICON
-                </div>
-                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-[#F4B942]">
-                  Laboratoire digital
-                </div>
+              <PiconLogo size="lg" withTagline={false} />
+              <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-[#F4B942]">
+                Laboratoire digital
               </div>
             </div>
             <p className="text-xs text-white/75 leading-relaxed max-w-xs">
@@ -51,15 +40,19 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="#"
+                href="https://www.instagram.com/photo.picon?exln=aWR2MXE5ZXI0eGNl"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/1EyFKXP6T8/"
                 aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white"
               >
                 <Facebook className="w-4 h-4" />
@@ -186,21 +179,27 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#F4B942] shrink-0" />
-                <span className="font-mono">
-                  +228 72 68 30 32 / 98 52 62 26
+                <span className="font-mono flex flex-wrap gap-x-1">
+                  <a href="tel:+22872683032" className="hover:text-white underline-offset-2 hover:underline">+228 72 68 30 32</a>
+                  <span aria-hidden="true">/</span>
+                  <a href="tel:+22898526226" className="hover:text-white underline-offset-2 hover:underline">+228 98 52 62 26</a>
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#F4B942] shrink-0" />
-                <span className="font-mono">infos@photopicon.com</span>
+                <a href="mailto:infos@photopicon.com" className="font-mono hover:text-white underline-offset-2 hover:underline">
+                  infos@photopicon.com
+                </a>
               </div>
             </div>
 
-            <PlayStoreButton
-              size="sm"
-              label="Télécharger l'app"
-              className="!bg-white !text-[#0A3D91] hover:!bg-[#F4B942] hover:!text-[#1A1A1A]"
-            />
+            <a
+              href="mailto:infos@photopicon.com"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-2 text-xs font-bold text-[#0A3D91] transition-colors hover:bg-[#F4B942] hover:text-[#1A1A1A]"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              Contacter PICON par e-mail
+            </a>
           </div>
         </div>
 
